@@ -1,3 +1,27 @@
+import { create } from "zustand";
+
+type MacBookProStore = {
+  color: string;
+  scale: number;
+  setColor: (color: string) => void;
+  setScale: (scale: number) => void;
+  reset: () => void;
+};
+
+const useMacBookProStore = create<MacBookProStore>((set) => ({
+  color: "#2c2e2c",
+  setColor: (color) => set({ color }),
+
+  scale: 0.08,
+  setScale: (scale) => set({ scale }),
+
+  reset: () =>
+    set({
+      color: "#2c2e2c",
+      scale: 0.08,
+    }),
+}));
+
 type NavLink = {
     label: string;
 };
@@ -144,3 +168,6 @@ export {
     performanceImages,
     performanceImgPositions,
 };
+
+
+export default useMacBookProStore;
