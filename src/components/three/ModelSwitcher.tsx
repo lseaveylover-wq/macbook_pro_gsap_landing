@@ -15,10 +15,10 @@ type ModelSwitcherProps = {
 const ANIMATION_DURATION = 1;
 const OFFSET_DISTANCE = 5;
 
-const fadeMeshes = (group, opacity) => {
+const fadeMeshes = (group: THREE.Group | null, opacity: number) => {
   if (!group) return;
 
-  group.traverse((child) => {
+  group.traverse((child: any) => {
     if (child.isMesh) {
       child.material.transparent = true;
       child.material.needsUpdate = true;
@@ -27,7 +27,7 @@ const fadeMeshes = (group, opacity) => {
   });
 };
 
-const moveGroup = (group, x) => {
+const moveGroup = (group: THREE.Group | null, x: number) => {
   if (!group) return;
 
   gsap.to(group.position, { x, duration: ANIMATION_DURATION });

@@ -19,8 +19,8 @@ const App = () => {
       <Hero />
       <ProductViewer />
       <Showcase />
-      <Display />
       <Performance />
+      <Display />
       <Features />
       <Highlights />
       <Footer />

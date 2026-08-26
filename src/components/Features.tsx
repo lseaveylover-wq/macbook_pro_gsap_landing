@@ -4,6 +4,7 @@ import { features, featureSequence } from "../constants";
 import clsx from "clsx";
 import { Suspense, useEffect, useRef } from "react";
 import gsap from "gsap";
+import * as THREE from "three";
 import { Html } from "@react-three/drei";
 import MacbookModel from "./models/Macbook";
 import { useMediaQuery } from "react-responsive";
@@ -11,7 +12,7 @@ import useMacBookProStore from "../store";
 import { useGSAP } from "@gsap/react";
 
 const ModelScroll = () => {
-  const groupRef = useRef(null);
+  const groupRef = useRef<THREE.Group>(null);
   const isMobile = useMediaQuery({ query: "(max-width: 1024px)" });
   const { setTexture } = useMacBookProStore();
 
